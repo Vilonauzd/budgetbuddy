@@ -41,22 +41,22 @@ main {
 
 .checkbox-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-bottom: 20px;
 }
 
 .checkbox-label {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
     color: #000000; /* Black text for contrast */
-    box-shadow: 0 0 10px rgb(22, 78, 118);
+    box-shadow: 0 0 12px rgb(22, 78, 118);
     margin: 0 20px;
     text-align: center;
 }
 
 h1 {
     color: #ffffff; /* White text for header */
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
     word-wrap: break-word; /* Ensure text wraps within the width */
     display: flex;
@@ -73,7 +73,7 @@ form {
 }
 
 label {
-    display: block;
+    display: flex;
     margin-top: 10px;
     font-size: 20px;
     font-weight: bold; /* Make titles bold */
@@ -85,7 +85,7 @@ input {
     width: 100%;
     padding: 5px;
     margin-top: 5px;
-    font-size: 24px; /* Increase input box text size */
+    font-size: 20px; /* Increase input box text size */
     font-weight: bold; /* Make input box text bold */
     color: #000000; /* Black text for contrast */
     background-color: #e0ffff; /* Light aqua teal highlight */
@@ -94,7 +94,7 @@ input {
 button {
     margin-top: 20px;
     padding: 10px;
-    font-size: 24px;
+    font-size: 20px;
     width: 100%;
     border: 3px solid #acacac;
     background-color: rgba(0, 0, 0, 0.826);
@@ -109,14 +109,14 @@ button:hover {
 a {
     margin-top: 10px;
     display: block;
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
     color: #ffffff; /* White text for contrast */
     word-wrap: break-word; /* Ensure text wraps within the width */
 }
 
 #totalHours {
-    font-size: 24px;
+    font-size: 20px;
     color: #000000; /* Black text */
     font-weight: bold;
     background-color: #98FB98; /* Pale green highlight */

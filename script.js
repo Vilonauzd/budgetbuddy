@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const deviceTypes = {
         "Windows 10/11 devices": 0.5,
-        "Route, Switch, and Firewall Devices": 1.0,
+        "Route Switch and Firewall Devices": 1.0,
         "Wireless Access Points and Controllers": 0.25, // New item with 0.25 hours per device
         "Windows Server Instances": 0.5, // Corrected label
         "Hypervisor host instances": 1.0
@@ -46,14 +46,14 @@ function calculateTotalHours() {
     const option2Checked = document.getElementById('option2').checked;
     
     if (!option1Checked && !option2Checked) {
-        alert('Please select at least one option before calculating.');
+        alert('Please select if customer is Net-new or existing before calculating total...');
         return;
     }
     
     let totalHours = 0;
     const deviceTypes = {
         "Windows 10/11 devices": 0.5,
-        "Route, Switch, and Firewall Devices": 1.0,
+        "Route Switch and Firewall Devices": 1.0,
         "Wireless Access Points and Controllers": 0.25, // New item with 0.25 hours per device
         "Windows Server Instances": 0.5, // Corrected label
         "Hypervisor host instances": 1.0
@@ -72,7 +72,7 @@ function generateCSV() {
     let csvContent = 'data:text/csv;charset=utf-8,Device Type,Count\n';
     const deviceTypes = {
         "Windows 10/11 devices": 0.5,
-        "Route, Switch, and Firewall Devices": 1.0,
+        "Route Switch and Firewall Devices": 1.0,
         "Wireless Access Points and Controllers": 0.25, // New item with 0.25 hours per device
         "Windows Server Instances": 0.5, // Corrected label
         "Hypervisor host instances": 1.0
@@ -94,11 +94,11 @@ function generateCSV() {
 function generateHTML() {
     let htmlContent = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Onboarding Report</title></head><body><h1>Onboarding Report</h1><ul>';
     const deviceTypes = {
-        "Windows 10/11 devices": 0.5,
-        "Route, Switch, and Firewall Devices": 1.0,
-        "Wireless Access Points and Controllers": 0.25, // New item with 0.25 hours per device
-        "Windows Server Instances": 0.5, // Corrected label
-        "Hypervisor host instances": 1.0
+        "Windows 10/11 devices": 0.5, // 30 minute per/device weight
+        "Route Switch and Firewall Devices": 1.0, // 1 hour per/device weight
+        "Wireless Access Points and Controllers": 0.25, // 15 minute per/device weight
+        "Windows Server Instances": 0.5, // 30 minute per/device weight
+        "Hypervisor host instances": 1.0 // 1 hour per/device weight
     };
     for (const deviceType in deviceTypes) {
         const count = document.getElementById(deviceType.replace(/ /g, '_').replace(/,/g, '').replace(/and/g, 'and')).value;
