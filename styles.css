@@ -1,41 +1,87 @@
 /* Existing styles */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
     background-image: url('background.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     color: #b9b9b9;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    min-height: 100vh;
-    border: 10px solid black;
-    box-shadow: 0 0 10px rgb(22, 78, 118);
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+}
+
+.sidebar-header {
+    padding: 20px;
+    text-align: center;
+    background-color: #444;
+    border-bottom: 1px solid #555;
+}
+
+.sidebar-menu {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.sidebar-menu h3 {
+    margin-top: 0;
+}
+
+.sidebar-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    padding: 10px;
+    border-bottom: 1px solid #555;
+    cursor: pointer;
+}
+
+.sidebar-menu li:hover {
+    background-color: #555;
+}
+
+.sidebar-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 header, footer {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #000;
+    color: #fff;
     padding: 10px;
     text-align: center;
-    flex-shrink: 0;
-    width: 100%;
-    box-shadow: 0 0 10px rgb(22, 78, 118);
 }
 
 footer {
-    font-size: 16px;
-    font-weight: bold;
-}
-
-main {
-    padding: 20px;
-    box-sizing: border-box;
-    flex-grow: 1;
+    margin-top: auto;
 }
 
 .checkbox-container {
@@ -47,17 +93,13 @@ main {
 .checkbox-label {
     font-size: 14px;
     font-weight: bold;
-    color: #000000;
-    box-shadow: 0 0 12px rgb(22, 78, 118);
+    color: #000;
     margin: 0 20px;
-    text-align: center;
 }
 
 h1 {
-    color: #ffffff;
     font-size: 20px;
     text-align: center;
-    word-wrap: break-word;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,8 +118,7 @@ label {
     margin-top: 10px;
     font-size: 20px;
     font-weight: bold;
-    color: #000000;
-    word-wrap: break-word;
+    color: #000;
 }
 
 input {
@@ -86,7 +127,7 @@ input {
     margin-top: 5px;
     font-size: 20px;
     font-weight: bold;
-    color: #000000;
+    color: #000;
     background-color: #e0ffff;
 }
 
@@ -97,7 +138,7 @@ button {
     width: 100%;
     border: 3px solid #acacac;
     background-color: rgba(0, 0, 0, 0.826);
-    color: #ffffff;
+    color: #fff;
     cursor: pointer;
 }
 
@@ -110,24 +151,22 @@ a {
     display: block;
     font-size: 20px;
     text-align: center;
-    color: #ffffff;
-    word-wrap: break-word;
+    color: #fff;
 }
 
 #totalHours, #totalPrice {
     font-size: 18px;
-    color: #000000;
+    color: #000;
     font-weight: bold;
     background-color: #98FB98;
     padding: 5px;
     border: 4px solid black;
-    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
 }
 
 #stockPriceBanner {
     font-size: 16px;
-    color: #ffffff;
-    background-color: #000000;
+    color: #fff;
+    background-color: #000;
     padding: 5px;
     text-align: center;
 }
@@ -138,50 +177,16 @@ a {
     margin-top: 20px;
 }
 
-#futureTools {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100vh;
-    background-color: #f0f0f0;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-}
-
-#futureTools ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-#futureTools li {
-    background-color: #e0e0e0;
-    padding: 10px;
-    margin-bottom: 5px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    text-align: center;
-}
-
-#futureTools li:hover {
-    background-color: #d0d0d0;
-}
-
 /* Media queries for mobile devices */
 @media (max-width: 768px) {
-    #futureTools {
+    .sidebar {
         width: 100%;
         height: auto;
         position: relative;
-        box-shadow: none;
     }
 
-    header, footer {
-        text-align: center;
-        padding: 10px 0;
+    .main-content {
+        margin-left: 0;
     }
 
     .checkbox-container {
