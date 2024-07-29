@@ -42,6 +42,14 @@ function adjustPopupSize() {
 }
 
 function calculateTotalHours() {
+    const option1Checked = document.getElementById('option1').checked;
+    const option2Checked = document.getElementById('option2').checked;
+    
+    if (!option1Checked && !option2Checked) {
+        alert('Please select at least one option before calculating.');
+        return;
+    }
+    
     let totalHours = 0;
     const deviceTypes = {
         "Windows 10/11 devices": 0.5,
