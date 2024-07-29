@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         label.innerText = `Enter number of ${deviceType}`;
         const input = document.createElement('input');
         input.type = 'number';
-        input.id = deviceType.replace(/ /g, '_'); // Use underscores instead of spaces in IDs
+        input.id = deviceType.replace(/ /g, '_').replace(/,/g, '').replace(/and/g, 'and'); // Use underscores instead of spaces in IDs
         input.min = 0;
         input.value = 0;
         deviceInputs.appendChild(label);
@@ -51,12 +51,12 @@ function calculateTotalHours() {
         "Hypervisor host instances": 1.0
     };
     for (const deviceType in deviceTypes) {
-        const count = parseInt(document.getElementById(deviceType.replace(/ /g, '_')).value, 10);
+        const count = parseInt(document.getElementById(deviceType.replace(/ /g, '_').replace(/,/g, '').replace(/and/g, 'and')).value, 10);
         if (count > 0) {
             totalHours += count * deviceTypes[deviceType];
         }
     }
-    totalHours += additionalHoursNetNew;
+    totalHours += 2.0; // additionalHoursNetNew
     document.getElementById('totalHours').innerText = `Total Hours: ${totalHours}`;
 }
 
@@ -70,7 +70,7 @@ function generateCSV() {
         "Hypervisor host instances": 1.0
     };
     for (const deviceType in deviceTypes) {
-        const count = document.getElementById(deviceType.replace(/ /g, '_')).value;
+        const count = document.getElementById(deviceType.replace(/ /g, '_').replace(/,/g, '').replace(/and/g, 'and')).value;
         csvContent += `${deviceType},${count}\n`;
     }
     csvContent += `Total Hours,${document.getElementById('totalHours').innerText.split(' ')[2]}\n`;
@@ -93,7 +93,7 @@ function generateHTML() {
         "Hypervisor host instances": 1.0
     };
     for (const deviceType in deviceTypes) {
-        const count = document.getElementById(deviceType.replace(/ /g, '_')).value;
+        const count = document.getElementById(deviceType.replace(/ /g, '_').replace(/,/g, '').replace(/and/g, 'and')).value;
         htmlContent += `<li>${deviceType}: ${count}</li>`;
     }
     htmlContent += `</ul><p>Total Hours: ${document.getElementById('totalHours').innerText.split(' ')[2]}</p></body></html>`;
