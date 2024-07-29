@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('background.svg'); /* Add your background image here */
+    background-size: cover; /* Ensure background image fits the window */
+    background-repeat: no-repeat; /* Prevent tiling */
+    background-position: center; /* Center the background image */
+    color: #b9b9b9; /* Grey text for contrast */
+    width: 600px; /* Set the width to 600px */
+    height: 1200px; /* Set the height to 1200px */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header, footer {
+    background-color: #000000; /* Solid black background */
+    color: #ffffff; /* White text */
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+footer {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+h1 {
+    color: #ffffff; /* White text for header */
+    font-size: 24px;
+    text-align: center;
+    word-wrap: break-word; /* Ensure text wraps within the width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 img {
+    margin-right: 10px; /* Space between icon and title */
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-size: 24px;
+    color: #000000; /* Black text for contrast */
+    word-wrap: break-word; /* Ensure text wraps within the width */
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 16px;
+    color: #000000; /* Black text for contrast */
+    background-color: #e0ffff; /* Light aqua teal highlight */
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 24px;
+    width: 100%;
+    border: 3px solid #acacac;
+    background-color: rgba(0, 0, 0, 0.826);
+    color: #ffffff; /* White text for button */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+a {
+    margin-top: 10px;
+    display: block;
+    font-size: 24px;
+    text-align: center;
+    color: #ffffff; /* White text for contrast */
+    word-wrap: break-word; /* Ensure text wraps within the width */
+}
+
+#totalHours {
+    font-size: 24px;
+    color: #000000; /* Black text */
+    font-weight: bold;
+    background-color: yellow; /* Yellow highlight */
+    padding: 5px;
+}

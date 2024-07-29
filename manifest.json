@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "BudgetBuddy - CMS Onboarding",
+    "version": "1.0",
+    "description": "Project Labor Calculator - IT Managed Services - Onboarding",
+    "permissions": [
+      "activeTab"
+    ],
+    "action": {
+      "default_popup": "index.html",
+      "default_icon": {
+        "16": "icon16.jpg",
+        "48": "icon48.jpg",
+        "128": "icon128.jpg"
+      }
+    },
+    "icons": {
+      "16": "icon16.jpg",
+      "48": "icon48.jpg",
+      "128": "icon128.jpg"
+    },
+    "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'"
+    }
+  }
+  
