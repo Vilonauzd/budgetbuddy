@@ -46,9 +46,10 @@ main {
 }
 
 .checkbox-label {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: bold;
     color: #000000; /* Black text for contrast */
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
     margin: 0 20px;
 }
 
@@ -73,7 +74,7 @@ form {
 label {
     display: block;
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold; /* Make titles bold */
     color: #000000; /* Black text for contrast */
     word-wrap: break-word; /* Ensure text wraps within the width */
