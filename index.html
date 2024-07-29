@@ -32,25 +32,65 @@
         </header>
         <main>
             <section id="calculator">
-                <div class="checkbox-container">
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="option1"> [Net-New CMS Customer]
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="option2"> [Existing CMS Customer]
-                    </label>
+                <div class="calculator-container">
+                    <div class="calculator-form">
+                        <div class="checkbox-container">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="option1"> [Net-New CMS Customer]
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="option2"> [Existing CMS Customer]
+                            </label>
+                        </div>
+                        <form id="calculatorForm">
+                            <label for="customerName">Customer Name:</label>
+                            <input type="text" id="customerName" placeholder="Enter customer name">
+                            <div id="deviceInputs"></div>
+                            <button type="button" id="calculateButton">Calculate Total Hours</button>
+                        </form>
+                        <p id="totalHours">Total Hours: </p>
+                        <p id="totalPrice">Total Price: </p>
+                        <button id="generateCSVButton">Generate CSV Report</button>
+                        <button id="generateHTMLButton">Generate HTML Report</button>
+                        <button id="emailReportButton">Email Report</button>
+                    </div>
+                    <div class="summary-table" id="summaryTable">
+                        <h2>Summary</h2>
+                        <table>
+                            <tr>
+                                <th>Device Type</th>
+                                <th>Hours</th>
+                                <th>Formula Example</th>
+                            </tr>
+                            <tr>
+                                <td>Windows 10/11 devices</td>
+                                <td>0.5 hours/device</td>
+                                <td>Number of devices * 0.5</td>
+                            </tr>
+                            <tr>
+                                <td>Route Switch and Firewall Devices</td>
+                                <td>1 hour/device</td>
+                                <td>Number of devices * 1</td>
+                            </tr>
+                            <tr>
+                                <td>Wireless Access Points and Controllers</td>
+                                <td>0.25 hours/device</td>
+                                <td>Number of devices * 0.25</td>
+                            </tr>
+                            <tr>
+                                <td>Windows Server Instances</td>
+                                <td>0.5 hours/device</td>
+                                <td>Number of servers * 0.5</td>
+                            </tr>
+                            <tr>
+                                <td>Hypervisor host instances</td>
+                                <td>1 hour/device</td>
+                                <td>Number of instances * 1</td>
+                            </tr>
+                        </table>
+                        <p>Note: Net-New CMS Customer adds 2 additional hours.</p>
+                    </div>
                 </div>
-                <form id="calculatorForm">
-                    <label for="customerName">Customer Name:</label>
-                    <input type="text" id="customerName" placeholder="Enter customer name">
-                    <div id="deviceInputs"></div>
-                    <button type="button" id="calculateButton">Calculate Total Hours</button>
-                </form>
-                <p id="totalHours">Total Hours: </p>
-                <p id="totalPrice">Total Price: </p>
-                <button id="generateCSVButton">Generate CSV Report</button>
-                <button id="generateHTMLButton">Generate HTML Report</button>
-                <button id="emailReportButton">Email Report</button>
             </section>
             <section id="reports">
                 <h2>Reports</h2>

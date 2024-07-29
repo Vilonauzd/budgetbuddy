@@ -177,6 +177,40 @@ a {
     margin-top: 20px;
 }
 
+.calculator-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.calculator-form {
+    flex: 1;
+}
+
+.summary-table {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.summary-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.summary-table th, .summary-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.summary-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.summary-table tr:hover {
+    background-color: #f1f1f1;
+}
+
 /* Media queries for mobile devices */
 @media (max-width: 768px) {
     .sidebar {
@@ -215,5 +249,14 @@ a {
 
     main {
         padding: 10px;
+    }
+
+    .calculator-container {
+        flex-direction: column;
+    }
+
+    .summary-table {
+        margin-left: 0;
+        margin-top: 20px;
     }
 }
