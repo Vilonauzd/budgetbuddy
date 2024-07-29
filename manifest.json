@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "BudgetBuddy - CMS Onboarding",
-    "version": "1.0",
+    "version": "1.1a",
     "description": "Project Labor Calculator - IT Managed Services - Onboarding",
     "permissions": [
       "activeTab"
