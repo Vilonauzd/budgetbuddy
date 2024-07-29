@@ -8,11 +8,7 @@ body {
     display: flex;
     flex-direction: row;
     min-height: 100vh;
-    background-image: url('background.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    color: #b9b9b9;
+    background-color: #f0f4f8; /* Blue-greyish tint */
 }
 
 .sidebar {
@@ -180,15 +176,22 @@ a {
 .calculator-container {
     display: flex;
     flex-direction: row;
+    width: 100%;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background-color: #f0f4f8; /* Blue-greyish tint to match background */
+    z-index: 1;
+    padding: 20px 0;
 }
 
 .calculator-form {
     flex: 1;
+    margin-right: 20px;
 }
 
 .summary-table {
     flex: 1;
-    margin-left: 20px;
 }
 
 .summary-table table {
