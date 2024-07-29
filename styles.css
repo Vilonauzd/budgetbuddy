@@ -29,14 +29,15 @@ header, footer {
 }
 
 footer {
-    font-size: 14px;
-    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: bold;
+    margin-inline: 0;
 }
 
 main {
     padding: 20px;
     box-sizing: border-box;
-    flex-grow: 0;
+    flex-grow: 1;
 }
 
 .checkbox-container {
@@ -46,7 +47,8 @@ main {
 }
 
 .checkbox-label {
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: bold;
     color: #000000; /* Black text for contrast */
     box-shadow: 0 0 12px rgb(22, 78, 118);
     margin: 0 20px;
@@ -55,7 +57,7 @@ main {
 
 h1 {
     color: #ffffff; /* White text for header */
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
     word-wrap: break-word; /* Ensure text wraps within the width */
     display: flex;
@@ -74,7 +76,7 @@ form {
 label {
     display: block;
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold; /* Make titles bold */
     color: #000000; /* Black text for contrast */
     word-wrap: break-word; /* Ensure text wraps within the width */
@@ -84,7 +86,7 @@ input {
     width: 100%;
     padding: 5px;
     margin-top: 5px;
-    font-size: 18px; /* Increase input box text size */
+    font-size: 20px; /* Increase input box text size */
     font-weight: bold; /* Make input box text bold */
     color: #000000; /* Black text for contrast */
     background-color: #e0ffff; /* Light aqua teal highlight */
@@ -93,7 +95,7 @@ input {
 button {
     margin-top: 20px;
     padding: 10px;
-    font-size: 18px;
+    font-size: 20px;
     width: 100%;
     border: 3px solid #acacac;
     background-color: rgba(0, 0, 0, 0.826);
@@ -243,7 +245,7 @@ a {
     font-size: 18px;
     color: #000000; /* Black text */
     font-weight: bold;
-    background-color: #e0ffff; /* Pale green highlight */
+    background-color: #98FB98; /* Pale green highlight */
     padding: 5px;
     border: 4px solid black; /* 4px border around total hours output */
     box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Add a slightly blue shadow */
