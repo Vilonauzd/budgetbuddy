@@ -3,9 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const deviceTypes = {
         "Windows 10/11 devices": 0.5,
-        "Route Switching and Firewall Devices": 1.0,
-        "Number of Windows Server Instances": 0.5,
-        "Number of Hypervisor host instances": 1.0
+        "Route, Switch, and Firewall Devices": 1.0,
+        "Wireless Access Points and Controllers": 0.25, // New item with 0.25 hours per device
+        "Windows Server Instances": 0.5, // Corrected label
+        "Hypervisor host instances": 1.0
     };
 
     const additionalHoursNetNew = 2.0;
@@ -44,9 +45,10 @@ function calculateTotalHours() {
     let totalHours = 0;
     const deviceTypes = {
         "Windows 10/11 devices": 0.5,
-        "Route Switching and Firewall Devices": 1.0,
-        "Number of Windows Server Instances": 0.5,
-        "Number of Hypervisor host instances": 1.0
+        "Route, Switch, and Firewall Devices": 1.0,
+        "Wireless Access Points and Controllers": 0.25, // New item with 0.25 hours per device
+        "Windows Server Instances": 0.5, // Corrected label
+        "Hypervisor host instances": 1.0
     };
     for (const deviceType in deviceTypes) {
         const count = parseInt(document.getElementById(deviceType.replace(/ /g, '_')).value, 10);
@@ -54,7 +56,7 @@ function calculateTotalHours() {
             totalHours += count * deviceTypes[deviceType];
         }
     }
-    totalHours += 2.0; // additionalHoursNetNew
+    totalHours += additionalHoursNetNew;
     document.getElementById('totalHours').innerText = `Total Hours: ${totalHours}`;
 }
 
@@ -62,9 +64,10 @@ function generateCSV() {
     let csvContent = 'data:text/csv;charset=utf-8,Device Type,Count\n';
     const deviceTypes = {
         "Windows 10/11 devices": 0.5,
-        "Route Switching and Firewall Devices": 1.0,
-        "Number of Windows Server Instances": 0.5,
-        "Number of Hypervisor host instances": 1.0
+        "Route, Switch, and Firewall Devices": 1.0,
+        "Wireless Access Points and Controllers": 0.25, // New item with 0.25 hours per device
+        "Windows Server Instances": 0.5, // Corrected label
+        "Hypervisor host instances": 1.0
     };
     for (const deviceType in deviceTypes) {
         const count = document.getElementById(deviceType.replace(/ /g, '_')).value;
@@ -84,9 +87,10 @@ function generateHTML() {
     let htmlContent = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Onboarding Report</title></head><body><h1>Onboarding Report</h1><ul>';
     const deviceTypes = {
         "Windows 10/11 devices": 0.5,
-        "Route Switching and Firewall Devices": 1.0,
-        "Number of Windows Server Instances": 0.5,
-        "Number of Hypervisor host instances": 1.0
+        "Route, Switch, and Firewall Devices": 1.0,
+        "Wireless Access Points and Controllers": 0.25, // New item with 0.25 hours per device
+        "Windows Server Instances": 0.5, // Corrected label
+        "Hypervisor host instances": 1.0
     };
     for (const deviceType in deviceTypes) {
         const count = document.getElementById(deviceType.replace(/ /g, '_')).value;
