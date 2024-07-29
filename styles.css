@@ -13,7 +13,7 @@ body {
     justify-content: space-between;
     min-height: 100vh; /* Ensure the application covers the full height */
     border: 10px solid black; /* Add a thick black border */
-    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Add a slightly blue shadow */
+    box-shadow: 0 0 10px rgb(22, 78, 118); /* Add a slightly blue shadow */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
@@ -25,7 +25,7 @@ header, footer {
     flex-shrink: 0;
     width: 100%; /* Make sure header and footer stretch to fit */
     box-sizing: border-box; /* Include padding in the element's total width and height */
-    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Add a slightly blue shadow */
+    box-shadow: 0 0 10px rgb(22, 78, 118); /* Add a slightly blue shadow */
 }
 
 footer {
@@ -49,8 +49,9 @@ main {
     font-size: 12px;
     font-weight: bold;
     color: #000000; /* Black text for contrast */
-    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+    box-shadow: 0 0 10px rgb(22, 78, 118);
     margin: 0 20px;
+    text-align: center;
 }
 
 h1 {
