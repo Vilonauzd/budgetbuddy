@@ -180,7 +180,7 @@ a {
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
-    background-color: #c0c8cf; /* Blue-greyish tint to match background */
+    background-color: #f0f4f8; /* Blue-greyish tint to match background */
     z-index: 1;
     padding: 20px 0;
 }
@@ -200,7 +200,7 @@ a {
 }
 
 .summary-table th, .summary-table td {
-    border: 1px solid #6e6e6e;
+    border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
 }
