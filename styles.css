@@ -217,6 +217,7 @@ a {
 .calculator-container {
     display: flex;
     flex-direction: row;
+<<<<<<< HEAD
     width: 100%;
     position: -webkit-sticky; /* Safari */
     position: sticky;
@@ -225,6 +226,8 @@ a {
     z-index: 1;
     padding: 20px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+=======
+>>>>>>> parent of 93abf85 (UI dynamics)
 }
 
 .calculator-form {
