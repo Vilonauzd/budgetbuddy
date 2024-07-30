@@ -25,6 +25,7 @@ body {
     overflow-y: auto;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease;
+    z-index: 1000; /* Ensure the sidebar is above other content */
 }
 
 .sidebar-header {
@@ -51,12 +52,14 @@ body {
     position: fixed;
     top: 10px;
     left: 10px;
-    background: none;
+    background: #333;
     border: none;
-    color: #333;
-    font-size: 30px;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 1001; /* Ensure the toggle button is above other content */
+    border-radius: 4px;
 }
 
 .sidebar-menu {
