@@ -61,7 +61,7 @@ body {
 }
 
 .sidebar-menu {
-    padding: 10px; /* Reduced padding */
+    padding: 20px; /* Reduced padding */
     flex-grow: 1;
 }
 
@@ -75,7 +75,7 @@ body {
 }
 
 .sidebar-menu li {
-    padding: 5px; /* Reduced padding */
+    padding: 10px; /* Reduced padding */
     cursor: pointer;
     text-align: center; /* Center text */
     transition: background-color 0.3s;
@@ -121,111 +121,6 @@ footer {
     margin-top: auto;
 }
 
-.checkbox-container {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 20px;
-}
-
-.checkbox-label {
-    font-size: 14px;
-    font-weight: bold;
-    color: #000;
-    margin: 0 20px;
-}
-
-h1 {
-    font-size: 24px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-h1 img {
-    margin-right: 10px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-    width: 100%;
-}
-
-label {
-    width: 100%;
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #000;
-    text-align: center;
-}
-
-input {
-    width: 80%;
-    padding: 10px;
-    margin-top: 5px;
-    font-size: 16px;
-    color: #333;
-    background-color: #e0ffff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    margin-top: 20px;
-    padding: 10px;
-    font-size: 16px;
-    width: 80%;
-    border: none;
-    background-color: #333;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    border-radius: 4px;
-}
-
-button:hover {
-    background-color: #555;
-}
-
-a {
-    margin-top: 10px;
-    display: block;
-    font-size: 16px;
-    text-align: center;
-    color: #333;
-    text-decoration: none;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px;
-    transition: background-color 0.3s;
-}
-
-a:hover {
-    background-color: #e0e0e0;
-}
-
-#totalHours, #totalPrice {
-    width: 80%;
-    padding: 10px;
-    margin-top: 5px;
-    font-size: 16px;
-    color: #333;
-    background-color: #e0ffff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    text-align: center; /* Centered text */
-}
-
-#rssFeed {
-    background-color: #f9f9f9;
-    padding: 10px;
-    margin-top: 20px;
-}
-
 .calculator-container {
     display: flex;
     flex-direction: row;
@@ -238,7 +133,7 @@ a:hover {
     z-index: 1;
 }
 
-.calculator-form, .summary-table {
+.calculator-form {
     flex: 1;
     border: 3px solid black; /* 3px black border */
     box-shadow: 0 0 10px rgba(173, 216, 230, 0.5); /* Pale light blue shadow */
@@ -251,98 +146,110 @@ a:hover {
     box-sizing: border-box; /* Ensure padding is included in width calculations */
 }
 
-.calculator-form {
-    margin-right: 10px; /* Shrink the gap between app and summary by 50% */
+.calculator-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.calculator-form label {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#deviceInputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.device-input-container {
+    padding: 20px;
+    background-color: #f0f4f8; /* Blue-greyish tint to match background */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(173, 216, 230, 0.5); /* Pale light blue shadow */
+}
+
+.device-input-container input {
+    font-size: 24px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f0f4f8; /* Blue-greyish tint to match background */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(173, 216, 230, 0.5); /* Pale light blue shadow */
+}
+
+#totalHours {
+    margin-bottom: 20px;
+    font-size: 32px;
+    text-align: center;
+}
+
+#totalPrice {
+    margin-bottom: 20px;
+    font-size: 32px;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px; /* Adjust padding to match main-content padding */
+    box-sizing: border-box;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 24px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: #555;
+    color: white;
+}
+
+#generateCSVButton,
+#generateHTMLButton,
+#emailReportButton {
+    padding: 10px 20px; /* Adjust padding to match main-content padding */
+    box-sizing: border-box;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 24px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#generateCSVButton:hover,
+#generateHTMLButton:hover,
+#emailReportButton:hover {
+    background-color: #555;
+    color: white;
 }
 
 .summary-table {
-    margin-left: 10px; /* Shrink the gap between app and summary by 50% */
+    flex-grow: 1;
+    border: 3px solid black; /* 3px black border */
+    box-shadow: 0 0 10px rgba(173, 216, 230, 0.5); /* Pale light blue shadow */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
 }
 
 .summary-table table {
     width: 100%;
-    border-collapse: collapse;
+    font-size: 16px;
+    text-align: center;
 }
 
-.summary-table th, .summary-table td {
-    border: 1.5px solid #ddd;
-    padding: 8px;
-    text-align: left;
+.summary-table th,
+.summary-table td {
+    height: 40px;
+    vertical-align: middle;
+    padding-bottom: 20px;
 }
 
-.summary-table th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-}
-
-.summary-table tr:hover {
-    background-color: #f1f1f1;
-}
-
-.summary-table p {
-    font-size: 14px;
-    margin: 5px 0;
-}
-
-/* Media queries for mobile devices */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 250px; /* Restore full width for small screens */
-        transform: translateX(-250px);
-    }
-
-    .main-content {
-        margin-left: 0;
-        padding: 10px;
-    }
-
-    .toggle-sidebar {
-        display: block;
-    }
-
-    .sidebar.open {
-        transform: translateX(0);
-    }
-
-    .checkbox-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .checkbox-label {
-        margin: 10px 0;
-    }
-
-    label {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        width: 100%;
-    }
-
-    input {
-        width: 100%;
-    }
-
-    button {
-        width: 100%;
-        margin: 10px auto;
-    }
-
-    .calculator-container {
-        flex-direction: column;
-        align-items: center; /* Center the content */
-        padding: 10px;
-    }
-
-    .calculator-form, .summary-table {
-        width: 90%; /* Make sure both sections take full width on mobile */
-        margin-bottom: 20px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .summary-table {
-        margin-top: 0;
-    }
+th {
+    background-color: #555;
+    color: white;
+    border-top: 1px solid #555;
 }

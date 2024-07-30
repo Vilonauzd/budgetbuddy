@@ -35,22 +35,14 @@
             <section id="calculator" class="sticky-section">
                 <div class="calculator-container">
                     <div class="calculator-form">
-                        <div class="checkbox-container">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="option1"> [Net-New CMS Customer]
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="option2"> [Existing CMS Customer]
-                            </label>
-                        </div>
                         <form id="calculatorForm">
                             <label for="customerName">Customer Name:</label>
                             <input type="text" id="customerName" placeholder="Enter customer name">
                             <div id="deviceInputs"></div>
                             <button type="button" id="calculateButton">Calculate Total Hours</button>
                         </form>
-                        <p id="totalHours">Total Hours: </p>
-                        <p id="totalPrice">Total Price: </p>
+                        <p id="totalHours">Total Hours: 0.00</p>
+                        <p id="totalPrice">Total Price: $0.00</p>
                         <button id="generateCSVButton">Generate CSV Report</button>
                         <button id="generateHTMLButton">Generate HTML Report</button>
                         <button id="emailReportButton">Email Report</button>
@@ -65,12 +57,12 @@
                             </tr>
                             <tr>
                                 <td>Windows 10/11 devices</td>
-                                <td>0.5 hours/device</td>
-                                <td>Number of devices * 0.5</td>
+                                <td>0.50 hours/device</td>
+                                <td>Number of devices * 0.50</td>
                             </tr>
                             <tr>
                                 <td>Route Switch and Firewall Devices</td>
-                                <td>1 hour/device</td>
+                                <td>1.00 hour/device</td>
                                 <td>Number of devices * 1</td>
                             </tr>
                             <tr>
@@ -80,24 +72,15 @@
                             </tr>
                             <tr>
                                 <td>Windows Server Instances</td>
-                                <td>0.5 hours/device</td>
-                                <td>Number of servers * 0.5</td>
+                                <td>0.50 hours/device</td>
+                                <td>Number of servers * 0.50</td>
                             </tr>
                             <tr>
                                 <td>Hypervisor host instances</td>
-                                <td>1 hour/device</td>
+                                <td>1.00 hour/device</td>
                                 <td>Number of instances * 1</td>
                             </tr>
                         </table>
-                        <h3>Total Hours Calculation</h3>
-                        <p>Total Hours = Sum of (Number of devices * Hours per device)</p>
-                        <h3>Total Price Calculation</h3>
-                        <p>Total Price = Total Hours * Hourly Rate</p>
-                        <h3>Report Generation Details</h3>
-                        <p>CSV Report includes: Customer Name, Device Types and Counts, Total Hours, Total Price</p>
-                        <p>HTML Report includes: Customer Name, Device Types and Counts, Total Hours, Total Price</p>
-                        <p>Email Report includes: Customer Name, Total Hours, Total Price</p>
-                        <p>Note: Net-New CMS Customers (with box checked) add +2 additional hours for each input section with a value above 0.</p>
                     </div>
                 </div>
             </section>
@@ -109,34 +92,11 @@
                 <h2>Document Library</h2>
                 <!-- Content for Document Library section if needed -->
             </section>
-            <a id="downloadLink" style="display: none;"></a>
         </main>
         <footer>
             BudgetBuddy - CMS Onboarding, Revision 1.1a*, By Jonathon Marshall, jonathon.marshall@calian.com
         </footer>
-        <div id="rssFeed"></div>
     </div>
     <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if (isMobileDevice()) {
-                document.body.classList.add('mobile');
-            }
-        });
-
-        function isMobileDevice() {
-            return /Mobi|Android/i.test(navigator.userAgent);
-        }
-
-        // Toggle sidebar button click event
-        document.getElementById('toggleSidebarButton').addEventListener('click', function() {
-            document.getElementById('sidebar').classList.toggle('toggled');
-        });
-
-        // Close sidebar button click event
-        document.getElementById('closeSidebarButton').addEventListener('click', function() {
-            document.getElementById('sidebar').classList.remove('toggled');
-        });
-    </script>
 </body>
 </html>
