@@ -73,7 +73,7 @@ function calculateTotalHours() {
         if (count > 0) {
             totalHours += count * deviceTypes[deviceType];
             if (option1Checked) {
-                totalHours += additionalHoursNetNew;
+                totalHours += count * 2; // Adds 2 additional hours for each input with a value above 0 for Net-New customers
             }
         }
     }
