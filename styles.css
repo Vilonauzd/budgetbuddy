@@ -8,7 +8,11 @@ body {
     display: flex;
     flex-direction: column; /* Changed to column to ensure header and main-content are vertically aligned */
     min-height: 100vh;
-    background-color: #f0f4f8; /* Blue-greyish tint */
+    background-image: url('background.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #b9b9b9;
 }
 
 /* Sidebar Styles */
@@ -225,11 +229,11 @@ a {
 
 .calculator-form {
     flex: 1;
-    margin-right: 20px;
 }
 
 .summary-table {
     flex: 1;
+    margin-left: 20px;
 }
 
 .summary-table table {
