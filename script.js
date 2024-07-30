@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
+    adjustPopupSize();
+
     const deviceTypes = {
         "Windows_10_11_devices": 0.5,
         "Route_Switch_and_Firewall_Devices": 1.0,
@@ -32,13 +34,12 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('closeSidebarButton').addEventListener('click', toggleSidebar);
 
     fetchRSSFeed();
-    adjustPopupSize();
     window.onresize = adjustPopupSize;
 });
 
 function adjustPopupSize() {
-    const minWidth = 600;
-    const minHeight = 1200;
+    const minWidth = 600; // Set the minimum width to 600px
+    const minHeight = 1200; // Set the minimum height to 1200px
     const maxWidth = window.innerWidth * 0.9;
     const maxHeight = window.innerHeight * 0.9;
     document.body.style.width = `${Math.min(minWidth, maxWidth)}px`;
@@ -46,20 +47,7 @@ function adjustPopupSize() {
 }
 
 function calculateTotalHours() {
-    const option1Checked = document.getElementById('option1').checked;
-    const option2Checked = document.getElementById('option2').checked;
-    const customerName = document.getElementById('customerName').value.trim();
-
-    if (!option1Checked && !option2Checked) {
-        alert('Please select if the customer is Net-new or existing before calculating total...');
-        return;
-    }
-
-    if (customerName === "") {
-        alert('Please enter a customer name before calculating total...');
-        return;
-    }
-
+    let totalHours = 0;
     const deviceTypes = {
         "Windows_10_11_devices": 0.5,
         "Route_Switch_and_Firewall_Devices": 1.0,
@@ -67,8 +55,7 @@ function calculateTotalHours() {
         "Windows_Server_Instances": 0.5,
         "Hypervisor_host_instances": 1.0
     };
-    
-    let totalHours = 0;
+    const option1Checked = document.getElementById('option1').checked;
     for (const deviceType in deviceTypes) {
         const count = parseInt(document.getElementById(deviceType).value, 10);
         if (!isNaN(count) && count > 0) {
@@ -78,7 +65,6 @@ function calculateTotalHours() {
             }
         }
     }
-
     const totalPrice = totalHours * hourlyRate;
     document.getElementById('totalHours').innerText = `Total Hours: ${totalHours.toFixed(2)}`;
     document.getElementById('totalPrice').innerText = `Total Price: $${totalPrice.toFixed(2)}`;
