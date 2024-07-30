@@ -8,42 +8,30 @@
 </head>
 <body>
     <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>CMS BudgetBuddy</h2>
+        </div>
         <div class="sidebar-menu">
-<<<<<<< HEAD
-            <h3>Future Tools</h3>
-            <ul>
-                <li>Tool 1</li>
-                <li>Tool 2</li>
-                <li>Tool 3</li>
-            </ul>
             <h3>Navigation</h3>
             <ul>
                 <li><a href="#calculator">Calculator</a></li>
                 <li><a href="#reports">Reports</a></li>
                 <li><a href="#library">Document Library</a></li>
             </ul>
-=======
->>>>>>> parent of 93abf85 (UI dynamics)
             <h3>Future Tools</h3>
             <ul>
                 <li>Tool 1</li>
                 <li>Tool 2</li>
                 <li>Tool 3</li>
-            </ul>
-            <h3>Navigation</h3>
-            <ul>
-                <li><a href="#calculator">Calculator</a></li>
-                <li><a href="#reports">Reports</a></li>
-                <li><a href="#library">Document Library</a></li>
             </ul>
         </div>
     </div>
-    <header>
-        <h1><img src="icons/icon48.jpg" alt="Icon"> CMS BudgetBuddy</h1>
-    </header>
     <div class="main-content" id="mainContent">
+        <header>
+            <h1><img src="icons/icon48.jpg" alt="Icon"> CMS BudgetBuddy</h1>
+        </header>
         <main>
-            <section id="calculator">
+            <section id="calculator" class="sticky-section">
                 <div class="calculator-container">
                     <div class="calculator-form">
                         <div class="checkbox-container">
@@ -99,29 +87,6 @@
                                 <td>1 hour/device</td>
                                 <td>Number of instances * 1</td>
                             </tr>
-                            <tr>
-                                <td>Total Hours</td>
-                                <td colspan="2">Sum of all device hours + additional hours if Net-New CMS Customer</td>
-                            </tr>
-                            <tr>
-                                <td>Total Price</td>
-                                <td colspan="2">Total Hours * $250/hr</td>
-                            </tr>
-                            <tr>
-                                <th colspan="3">Report Generation</th>
-                            </tr>
-                            <tr>
-                                <td>Generate CSV</td>
-                                <td colspan="2">Includes Customer Name, Device Type, Count, Total Hours, and Total Price</td>
-                            </tr>
-                            <tr>
-                                <td>Generate HTML</td>
-                                <td colspan="2">Includes Customer Name, Device Type, Count, Total Hours, and Total Price</td>
-                            </tr>
-                            <tr>
-                                <td>Email Report</td>
-                                <td colspan="2">Includes Customer Name, Total Hours, and Total Price in the email body</td>
-                            </tr>
                         </table>
                         <p>Note: Net-New CMS Customers (with box checked, adds +2 additional hours for each input section on the left with any value above 0).</p>
                     </div>
@@ -133,7 +98,7 @@
             </section>
             <section id="library">
                 <h2>Document Library</h2>
-                <button id="openLibraryButton">Open Document Library</button>
+                <!-- Content for Document Library section if needed -->
             </section>
             <a id="downloadLink" style="display: none;"></a>
         </main>

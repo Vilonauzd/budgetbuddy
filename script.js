@@ -72,10 +72,10 @@ function calculateTotalHours() {
         const count = parseInt(document.getElementById(deviceType.replace(/ /g, '_').replace(/,/g, '').replace(/and/g, 'and')).value, 10);
         if (count > 0) {
             totalHours += count * deviceTypes[deviceType];
+            if (option1Checked) {
+                totalHours += additionalHoursNetNew;
+            }
         }
-    }
-    if (option1Checked) {
-        totalHours += additionalHoursNetNew;
     }
     const totalPrice = totalHours * hourlyRate;
     document.getElementById('totalHours').innerText = `Total Hours: ${totalHours}`;

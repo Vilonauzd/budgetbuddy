@@ -1,26 +1,20 @@
-/* General Styles */
+/* Existing styles */
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     display: flex;
-    flex-direction: column; /* Changed to column to ensure header and main-content are vertically aligned */
+    flex-direction: row;
     min-height: 100vh;
-    background-image: url('background.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    color: #b9b9b9;
+    background-color: #f0f4f8; /* Blue-greyish tint */
 }
-
-/* Sidebar Styles */
 
 .sidebar {
     width: 250px;
     background-color: #333;
-    color: #fff;
+    color: white;
     position: fixed;
     top: 0;
     left: 0;
@@ -28,7 +22,14 @@ body {
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+}
+
+.sidebar-header {
+    padding: 20px;
+    text-align: center;
+    background-color: #444;
+    border-bottom: 1px solid #555;
 }
 
 .sidebar-menu {
@@ -38,23 +39,18 @@ body {
 
 .sidebar-menu h3 {
     margin-top: 0;
-    font-size: 18px;
-    font-weight: 600;
 }
 
 .sidebar-menu ul {
     list-style-type: none;
     padding: 0;
-    margin: 0; /* Ensure no extra space around the list */
 }
 
 .sidebar-menu li {
     padding: 10px;
     border-bottom: 1px solid #555;
     cursor: pointer;
-    text-align: left;
-    font-size: 16px;
-    font-weight: 500;
+    text-align: left; /* Align text to the left */
 }
 
 .sidebar-menu li:hover {
@@ -67,52 +63,24 @@ body {
     display: block; /* Ensure full width is clickable */
 }
 
-/* Main Content Styles */
-
 .main-content {
     margin-left: 250px;
     padding: 20px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    padding-top: 60px; /* Adjusted for sticky header */
 }
 
-header {
-    position: fixed;
-    top: 0;
-    left: 250px; /* Align with sidebar */
-    right: 0;
+header, footer {
     background-color: #000;
     color: #fff;
     padding: 10px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 10; /* Ensure header is above other content */
 }
 
 footer {
-    background-color: #000;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
     margin-top: auto;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
 }
-
-header h1 {
-    font-size: 24px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-header h1 img {
-    margin-right: 10px;
-}
-
-/* Form and Input Styles */
 
 .checkbox-container {
     display: flex;
@@ -122,9 +90,21 @@ header h1 img {
 
 .checkbox-label {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: bold;
     color: #000;
     margin: 0 20px;
+}
+
+h1 {
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 img {
+    margin-right: 10px;
 }
 
 form {
@@ -134,63 +114,52 @@ form {
 label {
     display: flex;
     margin-top: 10px;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: bold;
     color: #000;
 }
 
 input {
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     margin-top: 5px;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: bold;
     color: #000;
     background-color: #e0ffff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 button {
     margin-top: 20px;
     padding: 10px;
-    font-size: 16px;
+    font-size: 20px;
     width: 100%;
-    border: none;
-    background-color: #333;
+    border: 3px solid #acacac;
+    background-color: rgba(0, 0, 0, 0.826);
     color: #fff;
     cursor: pointer;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-    background-color: #555;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 a {
     margin-top: 10px;
     display: block;
-    font-size: 16px;
+    font-size: 20px;
     text-align: center;
     color: #fff;
 }
 
-/* Total Hours and Total Price Styles */
-
 #totalHours, #totalPrice {
     font-size: 18px;
     color: #000;
-    font-weight: 700;
+    font-weight: bold;
     background-color: #98FB98;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    border: 4px solid black;
 }
-
-/* Stock Price Banner Styles */
 
 #stockPriceBanner {
     font-size: 16px;
@@ -198,26 +167,17 @@ a {
     background-color: #000;
     padding: 5px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-/* RSS Feed Styles */
 
 #rssFeed {
     background-color: #f9f9f9;
     padding: 10px;
     margin-top: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-/* Calculator Container Styles */
 
 .calculator-container {
     display: flex;
     flex-direction: row;
-<<<<<<< HEAD
     width: 100%;
     position: -webkit-sticky; /* Safari */
     position: sticky;
@@ -225,36 +185,31 @@ a {
     background-color: #f0f4f8; /* Blue-greyish tint to match background */
     z-index: 1;
     padding: 20px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-=======
->>>>>>> parent of 93abf85 (UI dynamics)
 }
 
 .calculator-form {
     flex: 1;
+    margin-right: 20px;
 }
 
 .summary-table {
     flex: 1;
-    margin-left: 20px;
 }
 
 .summary-table table {
     width: 100%;
     border-collapse: collapse;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .summary-table th, .summary-table td {
-    border: 1.5px solid #ddd; /* Increased line thickness */
-    padding: 10px;
+    border: 1px solid #ddd;
+    padding: 8px;
     text-align: left;
-    font-size: 14px;
 }
 
 .summary-table th {
     background-color: #f2f2f2;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 .summary-table tr:hover {
@@ -262,7 +217,6 @@ a {
 }
 
 /* Media queries for mobile devices */
-
 @media (max-width: 768px) {
     .sidebar {
         width: 100%;
@@ -272,7 +226,6 @@ a {
 
     .main-content {
         margin-left: 0;
-        padding-top: 60px; /* Adjusted for sticky header */
     }
 
     .checkbox-container {
