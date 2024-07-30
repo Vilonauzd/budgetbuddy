@@ -223,7 +223,7 @@ a:hover {
 }
 
 .summary-table th, .summary-table td {
-    border: 1px solid #ddd;
+    border: 1.5px solid #ddd;
     padding: 8px;
     text-align: left;
 }
@@ -235,6 +235,11 @@ a:hover {
 
 .summary-table tr:hover {
     background-color: #f1f1f1;
+}
+
+.summary-table p {
+    font-size: 14px;
+    margin: 5px 0;
 }
 
 /* Media queries for mobile devices */
