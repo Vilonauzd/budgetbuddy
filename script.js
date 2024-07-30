@@ -2,11 +2,11 @@ document.addEventListener('DOMContentLoaded', function() {
     adjustPopupSize();
 
     const deviceTypes = {
-        "Windows 10/11 devices": 0.5,
-        "Route Switch and Firewall Devices": 1.0,
-        "Wireless Access Points and Controllers": 0.25,
-        "Windows Server Instances": 0.5,
-        "Hypervisor host instances": 1.0
+        "Windows_10_11_devices": 0.5,
+        "Route_Switch_and_Firewall_Devices": 1.0,
+        "Wireless_Access_Points_and_Controllers": 0.25,
+        "Windows_Server_Instances": 0.5,
+        "Hypervisor_host_instances": 1.0
     };
 
     const additionalHoursNetNew = 2.0;
@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const deviceInputs = document.getElementById('deviceInputs');
     for (const deviceType in deviceTypes) {
         const label = document.createElement('label');
-        label.innerText = `Enter number of ${deviceType}`;
+        label.innerText = `Enter number of ${deviceType.replace(/_/g, ' ')}`;
         const input = document.createElement('input');
         input.type = 'number';
-        input.id = deviceType.replace(/ /g, '_').replace(/,/g, '').replace(/and/g, 'and');
+        input.id = deviceType;
         input.min = 0;
         input.value = 0;
         deviceInputs.appendChild(label);
@@ -30,6 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('generateCSVButton').addEventListener('click', generateCSV);
     document.getElementById('generateHTMLButton').addEventListener('click', generateHTML);
     document.getElementById('emailReportButton').addEventListener('click', emailReport);
+    document.getElementById('toggleSidebarButton').addEventListener('click', toggleSidebar);
+    document.getElementById('closeSidebarButton').addEventListener('click', toggleSidebar);
 
     fetchRSSFeed();
     updateStockPrice();
@@ -64,18 +66,18 @@ function calculateTotalHours() {
     
     let totalHours = 0;
     const deviceTypes = {
-        "Windows 10/11 devices": 0.5,
-        "Route Switch and Firewall Devices": 1.0,
-        "Wireless Access Points and Controllers": 0.25,
-        "Windows Server Instances": 0.5,
-        "Hypervisor host instances": 1.0
+        "Windows_10_11_devices": 0.5,
+        "Route_Switch_and_Firewall_Devices": 1.0,
+        "Wireless_Access_Points_and_Controllers": 0.25,
+        "Windows_Server_Instances": 0.5,
+        "Hypervisor_host_instances": 1.0
     };
     for (const deviceType in deviceTypes) {
-        const count = parseInt(document.getElementById(deviceType.replace(/ /g, '_').replace(/,/g, '').replace(/and/g, 'and')).value, 10);
+        const count = parseInt(document.getElementById(deviceType).value, 10);
         if (count > 0) {
             totalHours += count * deviceTypes[deviceType];
             if (option1Checked) {
-                totalHours += count * additionalHoursNetNew; // Adds 2 additional hours for each input with a value above 0 for Net-New customers
+                totalHours += additionalHoursNetNew; // Adds 2 additional hours for each input with a value above 0 for Net-New customers
             }
         }
     }
@@ -88,15 +90,15 @@ function generateCSV() {
     const customerName = document.getElementById('customerName').value.trim();
     let csvContent = `data:text/csv;charset=utf-8,Customer Name,${customerName}\nDevice Type,Count\n`;
     const deviceTypes = {
-        "Windows 10/11 devices": 0.5,
-        "Route Switch and Firewall Devices": 1.0,
-        "Wireless Access Points and Controllers": 0.25,
-        "Windows Server Instances": 0.5,
-        "Hypervisor host instances": 1.0
+        "Windows_10_11_devices": 0.5,
+        "Route_Switch_and_Firewall_Devices": 1.0,
+        "Wireless_Access_Points_and_Controllers": 0.25,
+        "Windows_Server_Instances": 0.5,
+        "Hypervisor_host_instances": 1.0
     };
     for (const deviceType in deviceTypes) {
-        const count = document.getElementById(deviceType.replace(/ /g, '_').replace(/,/g, '').replace(/and/g, 'and')).value;
-        csvContent += `${deviceType},${count}\n`;
+        const count = document.getElementById(deviceType).value;
+        csvContent += `${deviceType.replace(/_/g, ' ')},${count}\n`;
     }
     csvContent += `Total Hours,${document.getElementById('totalHours').innerText.split(' ')[2]}\n`;
     csvContent += `Total Price,${document.getElementById('totalPrice').innerText.split(' ')[2]}\n`;
@@ -113,15 +115,15 @@ function generateHTML() {
     const customerName = document.getElementById('customerName').value.trim();
     let htmlContent = `<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Onboarding Report</title></head><body><h1>Onboarding Report</h1><h2>Customer: ${customerName}</h2><ul>`;
     const deviceTypes = {
-        "Windows 10/11 devices": 0.5,
-        "Route Switch and Firewall Devices": 1.0,
-        "Wireless Access Points and Controllers": 0.25,
-        "Windows Server Instances": 0.5,
-        "Hypervisor host instances": 1.0
+        "Windows_10_11_devices": 0.5,
+        "Route_Switch_and_Firewall_Devices": 1.0,
+        "Wireless_Access_Points_and_Controllers": 0.25,
+        "Windows_Server_Instances": 0.5,
+        "Hypervisor_host_instances": 1.0
     };
     for (const deviceType in deviceTypes) {
-        const count = document.getElementById(deviceType.replace(/ /g, '_').replace(/,/g, '').replace(/and/g, 'and')).value;
-        htmlContent += `<li>${deviceType}: ${count}</li>`;
+        const count = document.getElementById(deviceType).value;
+        htmlContent += `<li>${deviceType.replace(/_/g, ' ')}: ${count}</li>`;
     }
     htmlContent += `</ul><p>Total Hours: ${document.getElementById('totalHours').innerText.split(' ')[2]}</p>`;
     htmlContent += `<p>Total Price: ${document.getElementById('totalPrice').innerText.split(' ')[2]}</p></body></html>`;
@@ -163,4 +165,9 @@ function updateStockPrice() {
     // Mock stock price update
     const stockPrice = (Math.random() * 100).toFixed(2); // Random price for demo purposes
     document.getElementById('stockPrice').innerText = `$${stockPrice}`;
+}
+
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('open');
 }
