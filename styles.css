@@ -55,7 +55,7 @@ footer {
 
 .calculator-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Side by side layout */
     width: 100%;
     max-width: 1200px;
     justify-content: space-between;
@@ -75,7 +75,7 @@ footer {
     flex-direction: column;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    margin-right: 20px; /* Space between calculator and summary */
 }
 
 .calculator-form form {

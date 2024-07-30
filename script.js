@@ -110,7 +110,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function emailReport() {
-        alert("Email Report functionality requires a backend service to send emails.");
+        generateCSV();
+        generateHTML();
+        generatePDF();
+
+        const subject = encodeURIComponent("CMS BudgetBuddy Report");
+        const body = encodeURIComponent("Please find the attached reports.");
+        const email = `mailto:?subject=${subject}&body=${body}`;
+
+        const csvFile = "report.csv";
+        const htmlFile = "report.html";
+        const pdfFile = "report.pdf";
+
+        window.location.href = `${email}&attachments=${csvFile},${htmlFile},${pdfFile}`;
     }
 
     function generatePDF() {
