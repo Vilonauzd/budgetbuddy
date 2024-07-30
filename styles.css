@@ -52,6 +52,8 @@ body {
     position: fixed;
     top: 10px;
     left: 10px;
+    width: 50px; /* Fixed width */
+    height: 50px; /* Fixed height */
     background: #333;
     border: none;
     color: white;
@@ -202,22 +204,15 @@ a:hover {
 }
 
 #totalHours, #totalPrice {
-    font-size: 16px;
-    color: #000;
-    font-weight: bold;
-    background-color: #98FB98;
+    width: 100%;
     padding: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+    color: #333;
+    background-color: #e0ffff;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#stockPriceBanner {
-    font-size: 16px;
-    color: #fff;
-    background-color: #000;
-    padding: 10px;
-    text-align: center;
+    text-align: center; /* Centered text */
 }
 
 #rssFeed {
@@ -320,10 +315,14 @@ a:hover {
 
     .calculator-container {
         flex-direction: column;
+        align-items: center; /* Center the content */
+    }
+
+    .calculator-form, .summary-table {
+        width: 100%; /* Make sure both sections take full width on mobile */
     }
 
     .summary-table {
-        margin-left: 0;
         margin-top: 20px;
     }
 }

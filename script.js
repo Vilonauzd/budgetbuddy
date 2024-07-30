@@ -34,8 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('closeSidebarButton').addEventListener('click', toggleSidebar);
 
     fetchRSSFeed();
-    updateStockPrice();
-    setInterval(updateStockPrice, 60000); // Update stock price every minute
 });
 
 window.onresize = adjustPopupSize;
@@ -65,13 +63,6 @@ function calculateTotalHours() {
     }
     
     let totalHours = 0;
-    const deviceTypes = {
-        "Windows_10_11_devices": 0.5,
-        "Route_Switch_and_Firewall_Devices": 1.0,
-        "Wireless_Access_Points_and_Controllers": 0.25,
-        "Windows_Server_Instances": 0.5,
-        "Hypervisor_host_instances": 1.0
-    };
     for (const deviceType in deviceTypes) {
         const count = parseInt(document.getElementById(deviceType).value, 10);
         if (count > 0) {
@@ -89,13 +80,6 @@ function calculateTotalHours() {
 function generateCSV() {
     const customerName = document.getElementById('customerName').value.trim();
     let csvContent = `data:text/csv;charset=utf-8,Customer Name,${customerName}\nDevice Type,Count\n`;
-    const deviceTypes = {
-        "Windows_10_11_devices": 0.5,
-        "Route_Switch_and_Firewall_Devices": 1.0,
-        "Wireless_Access_Points_and_Controllers": 0.25,
-        "Windows_Server_Instances": 0.5,
-        "Hypervisor_host_instances": 1.0
-    };
     for (const deviceType in deviceTypes) {
         const count = document.getElementById(deviceType).value;
         csvContent += `${deviceType.replace(/_/g, ' ')},${count}\n`;
@@ -114,13 +98,6 @@ function generateCSV() {
 function generateHTML() {
     const customerName = document.getElementById('customerName').value.trim();
     let htmlContent = `<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Onboarding Report</title></head><body><h1>Onboarding Report</h1><h2>Customer: ${customerName}</h2><ul>`;
-    const deviceTypes = {
-        "Windows_10_11_devices": 0.5,
-        "Route_Switch_and_Firewall_Devices": 1.0,
-        "Wireless_Access_Points_and_Controllers": 0.25,
-        "Windows_Server_Instances": 0.5,
-        "Hypervisor_host_instances": 1.0
-    };
     for (const deviceType in deviceTypes) {
         const count = document.getElementById(deviceType).value;
         htmlContent += `<li>${deviceType.replace(/_/g, ' ')}: ${count}</li>`;
@@ -159,12 +136,6 @@ function fetchRSSFeed() {
             html += `</ul>`;
             document.getElementById('rssFeed').innerHTML = html;
         });
-}
-
-function updateStockPrice() {
-    // Mock stock price update
-    const stockPrice = (Math.random() * 100).toFixed(2); // Random price for demo purposes
-    document.getElementById('stockPrice').innerText = `$${stockPrice}`;
 }
 
 function toggleSidebar() {
