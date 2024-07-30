@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         document.getElementById('totalHours').innerText = `Total Hours: ${totalHours.toFixed(2)}`;
+        document.getElementById('totalPrice').innerText = `Total Price: $${(totalHours * 100).toFixed(2)}`;
     }
 
     fetchRSSFeed();
@@ -53,21 +54,92 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('rssFeed').innerHTML = html;
             });
     }
+
+    document.getElementById('generateCSVButton').addEventListener('click', generateCSV);
+    document.getElementById('generateHTMLButton').addEventListener('click', generateHTML);
+    document.getElementById('emailReportButton').addEventListener('click', emailReport);
+    document.getElementById('generatePDFButton').addEventListener('click', generatePDF);
+
+    function generateCSV() {
+        let csvContent = "data:text/csv;charset=utf-8,";
+        csvContent += "Device Type,Hours,Formula\n";
+        
+        const options = document.querySelectorAll('input[type="number"]');
+        options.forEach(option => {
+            if (option.value > 0) {
+                const deviceType = option.id.replace(/_/g, ' ');
+                const count = parseFloat(option.value);
+                const hours = count * deviceTypes[option.id];
+                csvContent += `${deviceType},${hours},Number of ${deviceType} * ${deviceTypes[option.id]}\n`;
+            }
+        });
+        
+        const encodedUri = encodeURI(csvContent);
+        const link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "report.csv");
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    function generateHTML() {
+        let htmlContent = "<html><body>";
+        htmlContent += "<h1>Device Report</h1>";
+        htmlContent += "<table border='1'><tr><th>Device Type</th><th>Hours</th><th>Formula</th></tr>";
+        
+        const options = document.querySelectorAll('input[type="number"]');
+        options.forEach(option => {
+            if (option.value > 0) {
+                const deviceType = option.id.replace(/_/g, ' ');
+                const count = parseFloat(option.value);
+                const hours = count * deviceTypes[option.id];
+                htmlContent += `<tr><td>${deviceType}</td><td>${hours}</td><td>Number of ${deviceType} * ${deviceTypes[option.id]}</td></tr>`;
+            }
+        });
+        
+        htmlContent += "</table></body></html>";
+        
+        const blob = new Blob([htmlContent], { type: "text/html" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "report.html";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    function emailReport() {
+        alert("Email Report functionality requires a backend service to send emails.");
+    }
+
+    function generatePDF() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+
+        doc.text("Device Report", 10, 10);
+        let y = 20;
+
+        doc.autoTable({
+            startY: y,
+            head: [['Device Type', 'Hours', 'Formula']],
+            body: getTableData(),
+        });
+
+        doc.save('report.pdf');
+    }
+
+    function getTableData() {
+        const tableData = [];
+        const options = document.querySelectorAll('input[type="number"]');
+        options.forEach(option => {
+            if (option.value > 0) {
+                const deviceType = option.id.replace(/_/g, ' ');
+                const count = parseFloat(option.value);
+                const hours = count * deviceTypes[option.id];
+                tableData.push([deviceType, hours.toFixed(2), `Number of ${deviceType} * ${deviceTypes[option.id]}`]);
+            }
+        });
+        return tableData;
+    }
 });
-
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    section.scrollIntoView({ behavior: 'smooth' });
-}
-
-function generateCSV() {
-    alert("Generate CSV Report function is currently broken.");
-}
-
-function generateHTML() {
-    alert("Generate HTML Report function is currently broken.");
-}
-
-function emailReport() {
-    alert("Email Report function is currently broken.");
-}
