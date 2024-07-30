@@ -354,3 +354,34 @@ a:hover {
         margin-top: 0;
     }
 }
+
+/* Media query for larger screens */
+@media (min-width: 1200px) {
+    .sidebar {
+        width: 125px; /* Shrink size by 50% */
+    }
+
+    .sidebar-header {
+        font-size: 12px; /* Reduce font size */
+    }
+
+    .close-sidebar {
+        font-size: 12px; /* Reduce font size */
+    }
+
+    .sidebar-menu h3 {
+        font-size: 12px; /* Reduce font size */
+    }
+
+    .sidebar-menu li {
+        padding: 5px; /* Reduced padding */
+    }
+
+    .sidebar-menu a {
+        font-size: 12px; /* Reduced font size */
+    }
+
+    .main-content {
+        margin-left: 125px; /* Adjust margin-left */
+    }
+}
