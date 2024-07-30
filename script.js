@@ -71,7 +71,7 @@ function calculateTotalHours() {
     let totalHours = 0;
     for (const deviceType in deviceTypes) {
         const count = parseInt(document.getElementById(deviceType).value, 10);
-        if (count > 0) {
+        if (!isNaN(count) && count > 0) {
             totalHours += count * deviceTypes[deviceType];
             if (option1Checked) {
                 totalHours += additionalHoursNetNew; // Adds 2 additional hours for each input with a value above 0 for Net-New customers
@@ -79,7 +79,7 @@ function calculateTotalHours() {
         }
     }
 
-    const totalPrice = totalHours * 250;
+    const totalPrice = totalHours * hourlyRate;
     document.getElementById('totalHours').innerText = `Total Hours: ${totalHours.toFixed(2)}`;
     document.getElementById('totalPrice').innerText = `Total Price: $${totalPrice.toFixed(2)}`;
 }
