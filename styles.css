@@ -1,112 +1,126 @@
+/* General Styles */
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-image: url('background.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    color: #b9b9b9;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Changed to column to ensure header and main-content are vertically aligned */
     min-height: 100vh;
-    border: 10px solid black;
-    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
-    box-sizing: border-box;
+    background-color: #f0f4f8; /* Blue-greyish tint */
 }
 
+/* Sidebar Styles */
+
 .sidebar {
-    width: 200px;
-    background-color: #f4f4f4;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .sidebar-menu {
-    margin-bottom: 20px;
+    padding: 20px;
+    flex-grow: 1;
 }
 
 .sidebar-menu h3 {
+    margin-top: 0;
     font-size: 18px;
-    margin-bottom: 10px;
+    font-weight: 600;
 }
 
 .sidebar-menu ul {
     list-style-type: none;
     padding: 0;
+    margin: 0; /* Ensure no extra space around the list */
 }
 
-.sidebar-menu ul li {
-    margin-bottom: 10px;
+.sidebar-menu li {
+    padding: 10px;
+    border-bottom: 1px solid #555;
+    cursor: pointer;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
 }
 
-.sidebar-menu ul li a {
-    color: #000;
+.sidebar-menu li:hover {
+    background-color: #555;
+}
+
+.sidebar-menu a {
+    color: white;
     text-decoration: none;
+    display: block; /* Ensure full width is clickable */
 }
 
-header, footer {
-    background-color: #000000;
-    color: #ffffff;
+/* Main Content Styles */
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px; /* Adjusted for sticky header */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 250px; /* Align with sidebar */
+    right: 0;
+    background-color: #000;
+    color: #fff;
     padding: 10px;
     text-align: center;
-    flex-shrink: 0;
-    width: 100%;
-    box-sizing: border-box;
-    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10; /* Ensure header is above other content */
 }
 
 footer {
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.main-content {
-    display: flex;
-    justify-content: space-between;
-    flex-grow: 1;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-grow: 1;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    border: 4px solid black;
-    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
-}
-
-.checkbox-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.checkbox-label {
-    font-size: 24px;
-    font-weight: bold;
-    color: #000000;
-    margin: 0 20px;
-}
-
-h1 {
-    color: #ffffff;
-    font-size: 24px;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
     text-align: center;
-    word-wrap: break-word;
+    margin-top: auto;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-h1 img {
+header h1 img {
     margin-right: 10px;
+}
+
+/* Form and Input Styles */
+
+.checkbox-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+.checkbox-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    margin: 0 20px;
 }
 
 form {
@@ -114,84 +128,180 @@ form {
 }
 
 label {
-    display: block;
+    display: flex;
     margin-top: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #000000;
-    word-wrap: break-word;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
 }
 
 input {
     width: 100%;
-    padding: 5px;
+    padding: 10px;
     margin-top: 5px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #000000;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
     background-color: #e0ffff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 button {
     margin-top: 20px;
     padding: 10px;
-    font-size: 24px;
+    font-size: 16px;
     width: 100%;
-    border: 3px solid #acacac;
-    background-color: rgba(0, 0, 0, 0.826);
-    color: #ffffff;
+    border: none;
+    background-color: #333;
+    color: #fff;
     cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: #555;
 }
 
 a {
     margin-top: 10px;
     display: block;
-    font-size: 24px;
+    font-size: 16px;
     text-align: center;
-    color: #ffffff;
-    word-wrap: break-word;
+    color: #fff;
 }
 
-#totalHours {
-    font-size: 24px;
-    color: #000000;
-    font-weight: bold;
+/* Total Hours and Total Price Styles */
+
+#totalHours, #totalPrice {
+    font-size: 18px;
+    color: #000;
+    font-weight: 700;
     background-color: #98FB98;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Stock Price Banner Styles */
+
+#stockPriceBanner {
+    font-size: 16px;
+    color: #fff;
+    background-color: #000;
     padding: 5px;
-    border: 4px solid black;
-    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* RSS Feed Styles */
+
+#rssFeed {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Calculator Container Styles */
+
+.calculator-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background-color: #f0f4f8; /* Blue-greyish tint to match background */
+    z-index: 1;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-form {
+    flex: 1;
+    margin-right: 20px;
 }
 
 .summary-table {
-    flex-grow: 1;
-    margin-left: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    border: 4px solid black;
-    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.summary-table h2 {
-    margin-top: 0;
+    flex: 1;
 }
 
 .summary-table table {
     width: 100%;
     border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.summary-table table th,
-.summary-table table td {
-    border: 1px solid black;
-    padding: 8px;
+.summary-table th, .summary-table td {
+    border: 1.5px solid #ddd; /* Increased line thickness */
+    padding: 10px;
     text-align: left;
+    font-size: 14px;
 }
 
-#stockPriceBanner {
-    margin-top: 10px;
+.summary-table th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+
+.summary-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Media queries for mobile devices */
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding-top: 60px; /* Adjusted for sticky header */
+    }
+
+    .checkbox-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .checkbox-label {
+        margin: 10px 0;
+    }
+
+    label {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    input {
+        width: 80%;
+    }
+
+    button {
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .calculator-container {
+        flex-direction: column;
+    }
+
+    .summary-table {
+        margin-left: 0;
+        margin-top: 20px;
+    }
 }
