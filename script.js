@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const deviceTypes = {
         "Windows 10/11 devices": 0.5,
         "Route, Switch, and Firewall Devices": 1.0,
-        "Wireless Access Points and Controllers": 0.25, // New item with 0.25 hours per device
-        "Windows Server Instances": 0.5, // Corrected label
+        "Wireless Access Points and Controllers": 0.25,
+        "Windows Server Instances": 0.5,
         "Hypervisor host instances": 1.0
     };
 
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         label.innerText = `Enter number of ${deviceType}`;
         const input = document.createElement('input');
         input.type = 'number';
-        input.id = deviceType.replace(/ /g, '_').replace(/,/g, '').replace(/and/g, 'and'); // Use underscores instead of spaces in IDs
+        input.id = deviceType.replace(/ /g, '_').replace(/,/g, '').replace(/and/g, 'and');
         input.min = 0;
         input.value = 0;
         deviceInputs.appendChild(label);
@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
 window.onresize = adjustPopupSize;
 
 function adjustPopupSize() {
-    const minWidth = 600; // Set the minimum width to 600px
-    const minHeight = 1200; // Set the minimum height to 1200px
+    const minWidth = 600;
+    const minHeight = 1200;
     const maxWidth = window.innerWidth * 0.9;
     const maxHeight = window.innerHeight * 0.9;
     document.body.style.width = `${Math.min(minWidth, maxWidth)}px`;
@@ -44,18 +44,18 @@ function adjustPopupSize() {
 function calculateTotalHours() {
     const option1Checked = document.getElementById('option1').checked;
     const option2Checked = document.getElementById('option2').checked;
-    
+
     if (!option1Checked && !option2Checked) {
         alert('Please select at least one option before calculating.');
         return;
     }
-    
+
     let totalHours = 0;
     const deviceTypes = {
         "Windows 10/11 devices": 0.5,
         "Route, Switch, and Firewall Devices": 1.0,
-        "Wireless Access Points and Controllers": 0.25, // New item with 0.25 hours per device
-        "Windows Server Instances": 0.5, // Corrected label
+        "Wireless Access Points and Controllers": 0.25,
+        "Windows Server Instances": 0.5,
         "Hypervisor host instances": 1.0
     };
     for (const deviceType in deviceTypes) {
@@ -65,7 +65,7 @@ function calculateTotalHours() {
         }
     }
     if (option1Checked) {
-        totalHours += additionalHoursNetNew; // Add additional hours for net-new customers if option 1 is selected
+        totalHours += additionalHoursNetNew;
     }
     document.getElementById('totalHours').innerText = `Total Hours: ${totalHours}`;
 }
@@ -75,8 +75,8 @@ function generateCSV() {
     const deviceTypes = {
         "Windows 10/11 devices": 0.5,
         "Route, Switch, and Firewall Devices": 1.0,
-        "Wireless Access Points and Controllers": 0.25, // New item with 0.25 hours per device
-        "Windows Server Instances": 0.5, // Corrected label
+        "Wireless Access Points and Controllers": 0.25,
+        "Windows Server Instances": 0.5,
         "Hypervisor host instances": 1.0
     };
     for (const deviceType in deviceTypes) {
@@ -98,8 +98,8 @@ function generateHTML() {
     const deviceTypes = {
         "Windows 10/11 devices": 0.5,
         "Route, Switch, and Firewall Devices": 1.0,
-        "Wireless Access Points and Controllers": 0.25, // New item with 0.25 hours per device
-        "Windows Server Instances": 0.5, // Corrected label
+        "Wireless Access Points and Controllers": 0.25,
+        "Windows Server Instances": 0.5,
         "Hypervisor host instances": 1.0
     };
     for (const deviceType in deviceTypes) {
