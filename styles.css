@@ -6,7 +6,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     display: flex;
-    flex-direction: row;
+    flex-direction: column; /* Changed to column to ensure header and main-content are vertically aligned */
     min-height: 100vh;
     background-color: #f0f4f8; /* Blue-greyish tint */
 }
@@ -27,14 +27,6 @@ body {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
 }
 
-.sidebar-header {
-    padding: 20px;
-    text-align: center;
-    background-color: #444;
-    border-bottom: 1px solid #555;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
 .sidebar-menu {
     padding: 20px;
     flex-grow: 1;
@@ -49,6 +41,7 @@ body {
 .sidebar-menu ul {
     list-style-type: none;
     padding: 0;
+    margin: 0; /* Ensure no extra space around the list */
 }
 
 .sidebar-menu li {
@@ -67,7 +60,7 @@ body {
 .sidebar-menu a {
     color: white;
     text-decoration: none;
-    display: block;
+    display: block; /* Ensure full width is clickable */
 }
 
 /* Main Content Styles */
@@ -78,18 +71,29 @@ body {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    padding-top: 60px; /* Adjusted for sticky header */
 }
 
-header, footer {
+header {
+    position: fixed;
+    top: 0;
+    left: 250px; /* Align with sidebar */
+    right: 0;
     background-color: #000;
     color: #fff;
     padding: 10px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10; /* Ensure header is above other content */
 }
 
 footer {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
     margin-top: auto;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
@@ -261,6 +265,7 @@ a {
 
     .main-content {
         margin-left: 0;
+        padding-top: 60px; /* Adjusted for sticky header */
     }
 
     .checkbox-container {
