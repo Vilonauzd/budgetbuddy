@@ -30,9 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('generateCSVButton').addEventListener('click', generateCSV);
     document.getElementById('generateHTMLButton').addEventListener('click', generateHTML);
     document.getElementById('emailReportButton').addEventListener('click', emailReport);
-    document.getElementById('openLibraryButton').addEventListener('click', function() {
-        window.open('document_library.html', '_blank');
-    });
 
     fetchRSSFeed();
     updateStockPrice();
@@ -53,10 +50,15 @@ function adjustPopupSize() {
 function calculateTotalHours() {
     const option1Checked = document.getElementById('option1').checked;
     const option2Checked = document.getElementById('option2').checked;
-    const customerName = document.getElementById('customerName').value;
+    const customerName = document.getElementById('customerName').value.trim();
     
     if (!option1Checked && !option2Checked) {
-        alert('Please select if customer is Net-new or existing before calculating total...');
+        alert('Please select if the customer is Net-new or existing before calculating total...');
+        return;
+    }
+
+    if (customerName === "") {
+        alert('Please enter a customer name before calculating total...');
         return;
     }
     
@@ -73,17 +75,17 @@ function calculateTotalHours() {
         if (count > 0) {
             totalHours += count * deviceTypes[deviceType];
             if (option1Checked) {
-                totalHours += count * 2; // Adds 2 additional hours for each input with a value above 0 for Net-New customers
+                totalHours += count * additionalHoursNetNew; // Adds 2 additional hours for each input with a value above 0 for Net-New customers
             }
         }
     }
     const totalPrice = totalHours * hourlyRate;
-    document.getElementById('totalHours').innerText = `Total Hours: ${totalHours}`;
+    document.getElementById('totalHours').innerText = `Total Hours: ${totalHours.toFixed(2)}`;
     document.getElementById('totalPrice').innerText = `Total Price: $${totalPrice.toFixed(2)}`;
 }
 
 function generateCSV() {
-    const customerName = document.getElementById('customerName').value;
+    const customerName = document.getElementById('customerName').value.trim();
     let csvContent = `data:text/csv;charset=utf-8,Customer Name,${customerName}\nDevice Type,Count\n`;
     const deviceTypes = {
         "Windows 10/11 devices": 0.5,
@@ -108,7 +110,7 @@ function generateCSV() {
 }
 
 function generateHTML() {
-    const customerName = document.getElementById('customerName').value;
+    const customerName = document.getElementById('customerName').value.trim();
     let htmlContent = `<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Onboarding Report</title></head><body><h1>Onboarding Report</h1><h2>Customer: ${customerName}</h2><ul>`;
     const deviceTypes = {
         "Windows 10/11 devices": 0.5,
@@ -133,7 +135,7 @@ function generateHTML() {
 }
 
 function emailReport() {
-    const customerName = document.getElementById('customerName').value;
+    const customerName = document.getElementById('customerName').value.trim();
     const totalHours = document.getElementById('totalHours').innerText.split(' ')[2];
     const totalPrice = document.getElementById('totalPrice').innerText.split(' ')[2];
     const subject = `Onboarding Report for ${customerName}`;
