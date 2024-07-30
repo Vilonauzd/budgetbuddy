@@ -139,3 +139,12 @@ th {
     background-color: #555;
     color: white;
 }
+
+.summary-table h3 {
+    margin-top: 20px;
+}
+
+.summary-table p {
+    font-size: 14px;
+    color: #666;
+}

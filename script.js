@@ -51,11 +51,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 html += `</ul>`;
                 document.getElementById('rssFeed').innerHTML = html;
-            })
+            });
     }
 });
 
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     section.scrollIntoView({ behavior: 'smooth' });
+}
+
+function generateCSV() {
+    alert("Generate CSV Report function is currently broken.");
+}
+
+function generateHTML() {
+    alert("Generate HTML Report function is currently broken.");
+}
+
+function emailReport() {
+    alert("Email Report function is currently broken.");
 }

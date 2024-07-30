@@ -28,9 +28,9 @@
                         </form>
                         <p id="totalHours">Total Hours: 0.00</p>
                         <p id="totalPrice">Total Price: $0.00</p>
-                        <button id="generateCSVButton">Generate CSV Report</button>
-                        <button id="generateHTMLButton">Generate HTML Report</button>
-                        <button id="emailReportButton">Email Report</button>
+                        <button id="generateCSVButton" onclick="generateCSV()">Generate CSV Report</button>
+                        <button id="generateHTMLButton" onclick="generateHTML()">Generate HTML Report</button>
+                        <button id="emailReportButton" onclick="emailReport()">Email Report</button>
                     </div>
                     <div class="summary-table" id="summaryTable">
                         <h2>Summary</h2>
@@ -66,6 +66,12 @@
                                 <td>Number of instances * 1</td>
                             </tr>
                         </table>
+                        <h3>Generate CSV Report</h3>
+                        <p>This function generates a CSV report of the calculated hours and prices based on the user inputs. (Currently broken)</p>
+                        <h3>Generate HTML Report</h3>
+                        <p>This function generates an HTML report of the calculated hours and prices based on the user inputs. (Currently broken)</p>
+                        <h3>Email Report</h3>
+                        <p>This function emails the generated report to a specified email address. (Currently broken)</p>
                     </div>
                 </div>
             </section>
