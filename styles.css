@@ -3,117 +3,49 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f0f4f8; /* Blue-greyish tint */
+    background-color: #f0f4f8;
     color: #333;
 }
 
-.sidebar {
-    width: 125px; /* Reduced width by 50% */
+.top-nav {
+    width: 100%;
     background-color: #333;
     color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, width 0.3s ease;
-    z-index: 1000; /* Ensure the sidebar is above other content */
+    z-index: 1000;
 }
 
-.sidebar-header {
-    padding: 10px; /* Reduced padding */
-    text-align: center;
-    background-color: #444;
-    border-bottom: 1px solid #555;
-    position: relative;
-    font-size: 12px; /* Reduced font size */
-}
-
-.close-sidebar {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+.nav-button {
     background: none;
     border: none;
     color: white;
-    font-size: 12px; /* Reduced font size */
+    font-size: 18px;
+    padding: 10px 20px;
     cursor: pointer;
 }
 
-.toggle-sidebar {
-    display: none;
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    width: 50px; /* Fixed width */
-    height: 50px; /* Fixed height */
-    background: #333;
-    border: none;
-    color: white;
-    font-size: 24px;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 1001; /* Ensure the toggle button is above other content */
-    border-radius: 4px;
-}
-
-.sidebar-menu {
-    padding: 20px; /* Reduced padding */
-    flex-grow: 1;
-}
-
-.sidebar-menu ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center icons horizontally */
-}
-
-.sidebar-menu li {
-    padding: 10px; /* Reduced padding */
-    cursor: pointer;
-    text-align: center; /* Center text */
-    transition: background-color 0.3s;
-    white-space: nowrap; /* Prevent word wrapping */
-}
-
-.sidebar-menu li:hover {
+.nav-button:hover {
     background-color: #555;
 }
 
-.sidebar-menu a {
-    color: white;
-    text-decoration: none;
-    display: block; /* Ensure full width is clickable */
-    font-size: 24px; /* Font size for icons */
-}
-
-.icon {
-    font-size: 32px; /* Larger font size for icons */
-    color: white; /* White icons */
-}
-
 .main-content {
-    margin-left: 125px; /* Adjust margin-left */
+    margin-top: 60px; /* Adjust margin-top to make space for the top navigation */
     padding: 20px;
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content horizontally */
-    transition: margin-left 0.3s ease;
+    align-items: center;
 }
 
 header, footer {
     width: 100%;
     background-color: #000;
     color: #fff;
-    padding: 10px 20px; /* Adjust padding to match main-content padding */
-    box-sizing: border-box;
+    padding: 10px 20px;
     text-align: center;
 }
 
@@ -125,25 +57,21 @@ footer {
     display: flex;
     flex-direction: row;
     width: 100%;
-    max-width: 1200px; /* Add a max-width to limit stretching */
+    max-width: 1200px;
     justify-content: space-between;
     padding: 20px;
-    box-sizing: border-box;
-    background-color: #f0f4f8; /* Blue-greyish tint to match background */
-    z-index: 1;
+    background-color: #f0f4f8;
 }
 
 .calculator-form {
     flex: 1;
-    border: 3px solid black; /* 3px black border */
-    box-shadow: 0 0 10px rgba(173, 216, 230, 0.5); /* Pale light blue shadow */
-    padding: 20px; /* Reduced padding */
+    border: 3px solid black;
+    padding: 20px;
     background-color: #ffffff;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-sizing: border-box; /* Ensure padding is included in width calculations */
 }
 
 .calculator-form form {
@@ -164,72 +92,32 @@ footer {
 
 .device-input-container {
     padding: 20px;
-    background-color: #f0f4f8; /* Blue-greyish tint to match background */
+    background-color: #f0f4f8;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(173, 216, 230, 0.5); /* Pale light blue shadow */
 }
 
-.device-input-container input {
-    font-size: 24px;
-    padding: 20px;
-    margin-bottom: 20px;
-    background-color: #f0f4f8; /* Blue-greyish tint to match background */
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(173, 216, 230, 0.5); /* Pale light blue shadow */
-}
-
-#totalHours {
-    margin-bottom: 20px;
-    font-size: 32px;
-    text-align: center;
-}
-
-#totalPrice {
+#totalHours, #totalPrice {
     margin-bottom: 20px;
     font-size: 32px;
     text-align: center;
 }
 
 button {
-    padding: 10px 20px; /* Adjust padding to match main-content padding */
-    box-sizing: border-box;
+    padding: 10px 20px;
     background-color: #333;
     color: white;
     cursor: pointer;
     border: none;
     font-size: 24px;
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 button:hover {
     background-color: #555;
-    color: white;
-}
-
-#generateCSVButton,
-#generateHTMLButton,
-#emailReportButton {
-    padding: 10px 20px; /* Adjust padding to match main-content padding */
-    box-sizing: border-box;
-    background-color: #333;
-    color: white;
-    cursor: pointer;
-    border: none;
-    font-size: 24px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-#generateCSVButton:hover,
-#generateHTMLButton:hover,
-#emailReportButton:hover {
-    background-color: #555;
-    color: white;
 }
 
 .summary-table {
     flex-grow: 1;
-    border: 3px solid black; /* 3px black border */
-    box-shadow: 0 0 10px rgba(173, 216, 230, 0.5); /* Pale light blue shadow */
+    border: 3px solid black;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 8px;
@@ -241,8 +129,7 @@ button:hover {
     text-align: center;
 }
 
-.summary-table th,
-.summary-table td {
+.summary-table th, .summary-table td {
     height: 40px;
     vertical-align: middle;
     padding-bottom: 20px;
@@ -251,5 +138,4 @@ button:hover {
 th {
     background-color: #555;
     color: white;
-    border-top: 1px solid #555;
 }

@@ -7,25 +7,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <button class="toggle-sidebar" id="toggleSidebarButton">☰</button>
-    <div class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <h2>CMS BudgetBuddy</h2>
-            <button class="close-sidebar" id="closeSidebarButton">×</button>
-        </div>
-        <div class="sidebar-menu">
-            <ul>
-                <li><a href="#calculator"><span class="icon">🧮</span></a></li>
-                <li><a href="#reports"><span class="icon">📊</span></a></li>
-                <li><a href="#library"><span class="icon">📚</span></a></li>
-            </ul>
-            <h3><span class="icon">🔧</span></h3>
-            <ul>
-                <li><a href="#">Tool 1</a></li>
-                <li><a href="#">Tool 2</a></li>
-                <li><a href="#">Tool 3</a></li>
-            </ul>
-        </div>
+    <div class="top-nav">
+        <button class="nav-button" onclick="scrollToSection('calculator')">Calculator</button>
+        <button class="nav-button" onclick="scrollToSection('reports')">Reports</button>
+        <button class="nav-button" onclick="scrollToSection('library')">Library</button>
     </div>
     <div class="main-content" id="mainContent">
         <header>
