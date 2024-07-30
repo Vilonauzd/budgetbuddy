@@ -67,7 +67,7 @@ footer {
 
 .calculator-form {
     flex: 2; /* Increased width by 100% */
-    border: 3px solid #1e3542;
+    border: 3px solid #31404b;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 10px;
@@ -108,24 +108,25 @@ footer {
     background-color: #e0f7fa; /* Teal blue tint */
     font-size: 20px; /* Increased font size by 30% */
     font-weight: bold;
-    border: 2px solid #1e3542; /* 2px outline */
+    border: 2px solid #31404b; /* 2px outline */
     border-radius: 5px;
     box-sizing: border-box;
 }
 
 #totalHours, #totalPrice {
     margin-bottom: 20px;
-    font-size: 32px;
+    font-size: 20px; /* Matching font size to input sections */
     text-align: center;
+    font-weight: bold;
 }
 
 button {
-    padding: 10px 20px;
-    background-color: #1e3542;
+    padding: 13px; /* Matching padding to input sections */
+    background-color: #31404b;
     color: white;
     cursor: pointer;
     border: none;
-    font-size: 24px;
+    font-size: 20px; /* Matching font size to input sections */
     border-radius: 5px;
     transition: background 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -133,13 +134,13 @@ button {
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: #31404b;
     transform: translateY(-2px);
 }
 
 .summary-table {
     flex-grow: 1;
-    border: 3px solid #1e3542;
+    border: 3px solid #31404b;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 10px;
@@ -159,7 +160,7 @@ button:hover {
 }
 
 .summary-table th {
-    background-color: #1e3542;
+    background-color: #31404b;
     color: white;
 }
 
