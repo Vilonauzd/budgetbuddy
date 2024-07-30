@@ -93,6 +93,11 @@ body {
     font-size: 24px; /* Font size for icons */
 }
 
+.icon {
+    font-size: 32px; /* Larger font size for icons */
+    color: white; /* White icons */
+}
+
 .main-content {
     margin-left: 125px; /* Adjust margin-left */
     padding: 20px;
