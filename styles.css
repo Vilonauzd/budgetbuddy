@@ -251,7 +251,7 @@ a:hover {
     flex: 1;
     border: 3px solid black; /* 3px black border */
     box-shadow: 0 0 10px rgba(173, 216, 230, 0.5); /* Pale light blue shadow */
-    padding: 30px; /* Increased padding for better centering */
+    padding: 20px; /* Reduced padding */
     background-color: #ffffff;
     border-radius: 8px;
     display: flex;
@@ -261,11 +261,11 @@ a:hover {
 }
 
 .calculator-form {
-    margin-right: 20px;
+    margin-right: 10px; /* Shrink the gap between app and summary by 50% */
 }
 
 .summary-table {
-    margin-left: 20px;
+    margin-left: 10px; /* Shrink the gap between app and summary by 50% */
 }
 
 .summary-table table {
