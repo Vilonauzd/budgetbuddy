@@ -132,6 +132,7 @@ footer {
     font-weight: bold;
     color: #000;
     margin: 0 20px;
+    white-space: nowrap; /* Prevents wrapping and keeps text in a single line */
 }
 
 h1 {
@@ -160,6 +161,8 @@ label {
     font-size: 16px;
     font-weight: bold;
     color: #000;
+    text-align: center;
+    white-space: nowrap; /* Prevents wrapping and keeps text in a single line */
 }
 
 input {
@@ -217,6 +220,7 @@ a:hover {
     border: 1px solid #ccc;
     border-radius: 4px;
     text-align: center; /* Centered text */
+    white-space: nowrap; /* Prevents wrapping and keeps text in a single line */
 }
 
 #rssFeed {
@@ -283,6 +287,7 @@ a:hover {
 .summary-table p {
     font-size: 14px;
     margin: 5px 0;
+    white-space: nowrap; /* Prevents wrapping and keeps text in a single line */
 }
 
 /* Media queries for mobile devices */
@@ -335,8 +340,10 @@ a:hover {
     }
 
     .calculator-form, .summary-table {
-        width: 100%; /* Make sure both sections take full width on mobile */
+        width: 90%; /* Make sure both sections take full width on mobile */
         margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .summary-table {
