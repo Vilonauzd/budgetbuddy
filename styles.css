@@ -89,6 +89,18 @@ footer {
     margin-bottom: 10px;
 }
 
+#customerName {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 10px;
+    background-color: #e0f7fa; /* Teal blue tint */
+    font-size: 20px; /* Increased font size by 30% */
+    font-weight: bold;
+    border: 2px solid #3498db; /* 2px outline */
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
 #deviceInputs {
     display: flex;
     flex-wrap: wrap;
