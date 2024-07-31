@@ -5,36 +5,10 @@ body {
     box-sizing: border-box;
     background-color: #f0f4f8;
     color: #333;
-}
-
-.top-nav {
-    width: 100%;
-    background-color: #333;
-    color: white;
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-.nav-button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 18px;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.nav-button:hover {
-    background-color: #555;
+    overflow-x: auto; /* Allow horizontal scrolling */
 }
 
 .main-content {
-    margin-top: 60px; /* Adjust margin-top to make space for the top navigation */
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -63,7 +37,6 @@ footer {
     background-color: #ecf0f1;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap; /* Allow wrapping on small screens */
 }
 
 .calculator-form {
@@ -77,8 +50,6 @@ footer {
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-right: 20px; /* Space between calculator and summary */
-    width: 100%; /* Full width on mobile */
-    box-sizing: border-box;
 }
 
 .calculator-form form {
@@ -146,8 +117,6 @@ button {
     transition: background 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: 10px;
-    width: 100%; /* Full width on mobile */
-    box-sizing: border-box;
 }
 
 button:hover {
@@ -162,8 +131,7 @@ button:hover {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Full width on mobile */
-    box-sizing: border-box;
+    min-width: 300px;
 }
 
 .summary-table table {
@@ -198,22 +166,12 @@ button:hover {
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .top-nav {
-        flex-direction: column;
-    }
-
-    .nav-button {
-        font-size: 16px;
-        padding: 10px;
-        margin: 5px 0;
-    }
-
     .calculator-container {
-        flex-direction: column; /* Stack vertically on small screens */
+        flex-direction: row; /* Keep side-by-side layout */
+        overflow-x: scroll; /* Allow horizontal scrolling */
     }
 
-    .calculator-form {
-        margin-right: 0;
-        margin-bottom: 20px;
+    .calculator-form, .summary-table {
+        min-width: 600px; /* Set minimum width to ensure visibility */
     }
 }
