@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         document.getElementById('totalHours').innerText = `Total Hours: ${totalHours.toFixed(2)}`;
-        document.getElementById('totalPrice').innerText = `Total Price: $${(totalHours * 100).toFixed(2)}`;
+        document.getElementById('totalPrice').innerText = `Total Price: $${(totalHours * 250).toFixed(2)}`;
     }
 
     fetchRSSFeed();
